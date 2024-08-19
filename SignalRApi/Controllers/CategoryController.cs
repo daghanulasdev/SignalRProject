@@ -50,7 +50,7 @@ namespace SignalRApi.Controllers
             _categoryService.TUpdate(values);
             return Ok("Hakkımda alanı güncellendi");
         }
-        [HttpGet("GetCategory")]
+        [HttpGet("{id}")]
         public IActionResult GetCategory(int id)
         {
             var values = _mapper.Map<GetCategoryDto>(_categoryService.TGetById(id));

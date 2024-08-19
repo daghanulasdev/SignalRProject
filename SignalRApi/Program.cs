@@ -13,9 +13,6 @@ builder.Services.AddServiceExtensions();
 builder.Services.AddDbContext<SignalRContext>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-builder.Services.AddScoped<IAboutService, AboutManager>();
-builder.Services.AddScoped<IAboutDal, EfAboutDal>();
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
