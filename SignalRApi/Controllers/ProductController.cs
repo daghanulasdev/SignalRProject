@@ -43,15 +43,15 @@ namespace SignalRApi.Controllers
         {
             var values = _mapper.Map<Product>(createProductDto);
             _productService.TAdd(values);
-            return Ok("Hakkımda eklendi.");
+            return Ok("Ürün eklendi.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {
             var values = _productService.TGetById(id);
             _productService.TDelete(values);
-            return Ok("Hakkımda alanı silindi");
+            return Ok("Ürün silindi");
         }
 
         [HttpPut]
@@ -59,9 +59,9 @@ namespace SignalRApi.Controllers
         {
             var values = _mapper.Map<Product>(updateProductDto);
             _productService.TUpdate(values);
-            return Ok("Hakkımda alanı güncellendi");
+            return Ok("Ürün güncellendi");
         }
-        [HttpGet("GetProduct")]
+        [HttpGet("{id}")]
         public IActionResult GetProduct(int id)
         {
             var values = _mapper.Map<GetProductDto>(_productService.TGetById(id));
